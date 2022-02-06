@@ -1,13 +1,106 @@
 {% extends 'base.html'%}
 
 {% block content %}
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    Created by Ivan
+
+<section class="py-20 bg-light overflow-hidden">
+    <div class="container">
+        <h2 class="mb-16 mb-md-24">Game nerd</h2>
+        <div class="d-flex mb-20">
+            <div class="flex-shrink-0 w-100">
+                <div class="row">
+                    <div class="row main-row">
+                        <div class="col-2 col-menu">
+                            <div id="btn-toggle" class="btn btn-primary" onclick="showStuff()">Show / Hide Filters</div>
+                            <div class="menu-wrap" id="my">
+                                <div class="menu">
+                                    <h6 class="filter-title">Filters</h6>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">Filter 1</div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">Filter 2</div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">Filter 3</div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">(Those filters don't work, it's just a pretext to have
+                                            a credible interface)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% for game in games %}
+                        <div class="col-4 col-games">
+                                <div class="position-relative">
+                                    <a class="position-relative d-block link-dark text-decoration-none" href="#">
+                                        <div class="position-relative" style="height: 384px;">
+                                            <img class="img-fluid w-100 h-100" style="object-fit: cover;"
+                                                src="https://placeimg.com/100/100/any" alt="">
+                                        </div>
+                                        <div class="position-relative mt-1">
+                                            <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-5 text-muted"
+                                                href="#" style="z-index: 1;">love it</a>
+                                            <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-2 text-muted"
+                                                href="#" style="z-index: 1;">Open</a>
+                                            <div class="px-12">
+                                                <h3 class="mb-8">
+                                                    {{ game.name }}
+                                                </h3>
+                                                <span class="h6 text-info text-uppercase">{{game.slug}}</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </a>
+                                    
+                                </div>
+                        </div>
+                        {% endfor %}
+                        
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            </ul>
+                          </nav>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div><a class="btn btn-primary" href="#">Created by Ivan</a></div>
+    </div>
+</section>
+
+<script type="text/javascript">
+function showStuff() {
+    let x = document.getElementById('my');
+    if (x.style.display === 'none') {
+        x.style.display ='block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
 {% endblock %}
