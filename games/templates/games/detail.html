@@ -64,13 +64,23 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-        <div class="col-2 col-twitter">
-            <h2 class="card-title">Twitter</h5>
+        <div class="col-4 col-twitter">
+            <div class="card">
+                <h2 class="card-title">{{ game.name }} Twitts</h2>
+                {% for tweet in twitter %}
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">{{tweet.text|ljust:25}}</h13>
+                        <h9 class="card-title">{{tweet.id}}</h9>
+                        <h8 class="card-title">{{tweet.created_at }}</h8>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>   
         </div>
+        {% endfor %}
     </div>
 </div>
-
 <hr class="tg-hr">
 <footer class="tg-footer">
     <a class='tg-link' href='http://timguignard.com' target='_blank'>timguignard.com</a>

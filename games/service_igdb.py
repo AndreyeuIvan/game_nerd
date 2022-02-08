@@ -1,6 +1,12 @@
-from ast import List
-from requests import post
+import requests
+from requests.structures import CaseInsensitiveDict
 import json
+import re
+import environ
+
+
+env = environ.Env()
+environ.Env.read_env()
 
 
 class MyAuth:
@@ -13,7 +19,7 @@ class MyAuth:
         self.client_id = client_id
         self.url = url
 
-    def get_token(self, grant_type: dict):
+    def get_token_twitch(self, grant_type: dict):
         """
         1. Create post request
         2. Provide cretentials and grant_type(applicable for twitch
@@ -23,19 +29,27 @@ class MyAuth:
             "client_secret": self.secret,
         }
         auth_body = auth_body | grant_type
-        auth_response = post(self.url, auth_body)
+        auth_response = requests.post(self.url, auth_body)
         return auth_response.json()
+
+    def get_token_twitter(self, hash: str):
+        headers = CaseInsensitiveDict()
+        headers["Content-Type"] = "application/x-www-form-urlencoded"
+        headers["Authorization"] = f"Basic {hash}"
+        data = "grant_type=client_credentials"
+        auth_response = requests.post(URL_TWITTER_AUTH, headers=headers, data=data)
+        return auth_response
 
 
 # igdb
 URL_TWITCH = "https://id.twitch.tv/oauth2/token"
-client_secret_twitch = "hz9akahuzsa418xmflcfqrpdoqvokq"
-client_id_twitch = "txzxbs4vpf2y9scp1045n6oyzqzwxm"
+client_secret_twitch = env("client_secret_twitch")
+client_id_twitch = env("client_id_twitch")
 twitch_required = {"grant_type": "client_credentials"}
 
 # getting token
 twitch = MyAuth(client_secret_twitch, client_id_twitch, URL_TWITCH)
-token_twitch = twitch.get_token(twitch_required)["access_token"]
+token_twitch = twitch.get_token_twitch(twitch_required)["access_token"]
 
 IGB_URL = "https://api.igdb.com/v4/"
 
@@ -52,7 +66,7 @@ class IGDBWrapper:
         url = IGDBWrapper._build_url(endpoint)
         params = self._compose_request(query)
         # import pdb; pdb.set_trace()
-        response = post(url, **params)
+        response = requests.post(url, **params)
         response.raise_for_status()
         return response.content
 
@@ -82,7 +96,7 @@ class IGDBWrapper:
         """
         return json.loads(games)
 
-    def get_all(self):
+    def get_games_list(self):
         """
         1. Return all, but it will be 10 maximum.
         2. Wrape it into variable games.
@@ -94,7 +108,7 @@ class IGDBWrapper:
         games_json = self.to_json(games)
         return games_json
 
-    def get_genre(self, id: List):
+    def get_genre(self, id: list):
         id = tuple(id)
         query = f"fields name ; where id={id};"
         endpoint = "genres"
@@ -103,7 +117,7 @@ class IGDBWrapper:
         new_genres = [x["name"] for x in genres_json]
         return new_genres
 
-    def get_by_id(self, id: int):
+    def get_game_by_id(self, id: int):
         """
         1. Return game, according to provided id.
         2. Wrape it into variable games.
@@ -113,18 +127,65 @@ class IGDBWrapper:
         endpoint = "games"
         games = self.api_request(endpoint, query)
         games_json = self.to_json(games)
-        # import pdb; pdb.set_trace()
         genres = self.get_genre(games_json[0]["genres"])
         games_json[0]["genres"] = genres
         return games_json
 
 
 IG = IGDBWrapper(client_id_twitch, token_twitch)
-# import pdb; pdb.set_trace()
+
 
 # twitter
-URL_TWITTER = "https://api.twitter.com/2/users/by/username/"
 URL_TWITTER_AUTH = "https://api.twitter.com/oauth2/token"
-twitter_required = {"grant_type": "client_credentials"}
-API_KEY_TWITTER = ""
-API_SECRET_KEY = ""
+API_KEY_TWITTER = env("API_KEY_TWITTER")
+API_SECRET_KEY = env("API_SECRET_KEY")
+BEARER_TOKEN = env("BEARER_TOKEN")
+HASH = env("HASH")
+
+# get tokken for twitter
+auth_tweet = MyAuth(
+    secret=API_SECRET_KEY, client_id=API_KEY_TWITTER, url=URL_TWITTER_AUTH
+).get_token_twitter(HASH)
+token_twitter = auth_tweet.json()["access_token"]
+print(auth_tweet.status_code)
+
+
+URL_TWITTER_SEARCH = "https://api.twitter.com/2/tweets/search/recent"
+
+
+class TwitterWrapper:
+    def __init__(self, token: str):
+        self.token = token
+
+    @staticmethod
+    def _build_url(query: str):
+        """
+        Creating an url by concatinating url and query
+        """
+        return f"{URL_TWITTER_SEARCH}{query}"
+
+    def api_request(self, game_name: str):
+        """
+        Create request to api
+        """
+        headers = CaseInsensitiveDict()
+        headers["Content-Type"] = "application/x-www-form-urlencoded"
+        headers["Authorization"] = f"Bearer {self.token}"
+        query = f"?query={game_name}%20&tweet.fields=created_at,text"
+        response = requests.get(self._build_url(query), headers=headers)
+        return response.json()
+
+    def get_tweets(self, game_name: str):
+        """
+        Convert answer into a list
+        """
+        game_name = game_name.replace(" ", "")
+        re_game = re.sub("[^a-zA-Z0-9 \n\.]", "", game_name)
+        try:
+            list_of_tweets = self.api_request(re_game)["data"]
+        except:
+            list_of_tweets = ""
+        return list_of_tweets
+
+
+tw = TwitterWrapper(token_twitter)
