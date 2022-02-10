@@ -1,3 +1,4 @@
+from calendar import TUESDAY
 from pathlib import Path
 import environ
 
@@ -32,6 +33,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # internal
     "games",
+    "accounts",
+    #external
+    'crispy_forms',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +49,11 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 ROOT_URLCONF = "game_nerd.urls"
 
@@ -69,9 +80,14 @@ WSGI_APPLICATION = "game_nerd.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env("DATABASE_NAME"),
+        'USER': 'noname',
+        'HOST': env("DATABASE_HOST"),
+        'PORT': '5432',
+
+
     }
 }
 
@@ -118,3 +134,27 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+#ACCOUNT_AUTHENTICATION_METHOD = 'email'
+#EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'babe9live@gmail.com'
+EMAIL_HOST_PASSWORD = '2e2ption'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignUpForm'
+
+# Service
+API_KEY_TWITTER = env("API_KEY_TWITTER")
+API_SECRET_KEY = env("API_SECRET_KEY")
+BEARER_TOKEN = env("BEARER_TOKEN")
+HASH = env("HASH")
+client_secret_twitch = env("client_secret_twitch")
+client_id_twitch = env("client_id_twitch")
+twitch_required = {"grant_type": "client_credentials"}
