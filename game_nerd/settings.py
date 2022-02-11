@@ -1,4 +1,3 @@
-from calendar import TUESDAY
 from pathlib import Path
 import environ
 
@@ -33,11 +32,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # internal
     "games",
-    "accounts",
-    #external
-    'crispy_forms',
-    'allauth',
-    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -49,11 +43,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
 
 ROOT_URLCONF = "game_nerd.urls"
 
@@ -80,14 +69,9 @@ WSGI_APPLICATION = "game_nerd.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DATABASE_NAME"),
-        'USER': 'noname',
-        'HOST': env("DATABASE_HOST"),
-        'PORT': '5432',
-
-
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 

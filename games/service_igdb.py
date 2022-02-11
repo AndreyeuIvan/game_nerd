@@ -3,7 +3,7 @@ from requests.structures import CaseInsensitiveDict
 import json
 import re
 import environ
-import game_nerd.settings as _
+import games.settings as _
 
 env = environ.Env()
 environ.Env.read_env()
@@ -43,11 +43,13 @@ class MyAuth:
 
 # igdb
 URL_TWITCH = "https://id.twitch.tv/oauth2/token"
-
+client_secret_twitch = env("client_secret_twitch")
+client_id_twitch = env("client_id_twitch")
+twitch_required = {"grant_type": "client_credentials"}
 
 # getting token
-twitch = MyAuth(_.client_secret_twitch, _.client_id_twitch, URL_TWITCH)
-token_twitch = twitch.get_token_twitch(_.twitch_required)["access_token"]
+twitch = MyAuth(client_secret_twitch, client_id_twitch, URL_TWITCH)
+token_twitch = twitch.get_token_twitch(twitch_required)["access_token"]
 
 IGB_URL = "https://api.igdb.com/v4/"
 
@@ -63,6 +65,7 @@ class IGDBWrapper:
         """
         url = IGDBWrapper._build_url(endpoint)
         params = self._compose_request(query)
+        # import pdb; pdb.set_trace()
         response = requests.post(url, **params)
         response.raise_for_status()
         return response.content
@@ -129,17 +132,20 @@ class IGDBWrapper:
         return games_json
 
 
-IG = IGDBWrapper(_.client_id_twitch, token_twitch)
+IG = IGDBWrapper(client_id_twitch, token_twitch)
 
 
 # twitter
 URL_TWITTER_AUTH = "https://api.twitter.com/oauth2/token"
-
+API_KEY_TWITTER = env("API_KEY_TWITTER")
+API_SECRET_KEY = env("API_SECRET_KEY")
+BEARER_TOKEN = env("BEARER_TOKEN")
+HASH = env("HASH")
 
 # get tokken for twitter
 auth_tweet = MyAuth(
-    secret=_.API_SECRET_KEY, client_id=_.API_KEY_TWITTER, url=URL_TWITTER_AUTH
-).get_token_twitter(_.HASH)
+    secret=API_SECRET_KEY, client_id=API_KEY_TWITTER, url=URL_TWITTER_AUTH
+).get_token_twitter(HASH)
 token_twitter = auth_tweet.json()["access_token"]
 print(auth_tweet.status_code)
 
