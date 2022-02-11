@@ -3,6 +3,6 @@ from games.views import main, detail
 
 
 urlpatterns = [
-    path('', main, name='main'),
-    path('detail/', detail, name='detail')
+    path("", main, name="main"),
+    path("detail/<int:id>/", detail, name="detail"),
 ]

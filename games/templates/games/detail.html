@@ -4,19 +4,20 @@
 
 <div class="main">
     <div class="row main-row">
+        {% for game in games %}
         <div class="col-6 col-main">
             <div class="row row-cards">
                 <div class="col-18 col-card">
                     <div class="col-card__content">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="card-title">Packman</h5>
-                                    <h5 class="card-title">Description</h5>
+                                <h2 class="card-title">{{ game.name }}</h5>
+                                    <h5 class="card-title">{{ game.slug }}</h5>
                                     <p class="card-text">
-                                        Description_TextDescription_TextDescription_TextDescription_TextDescription_Text
+                                        {{ game.summary }}
                                     </p>
                                     <h5 class="card-title">Released</h5>
-                                    <p class="card-text">Nov 1995</p>
+                                    <p class="card-text">{{ game.release_dates}}</p>
                                     <h5 class="card-title">Screenshots</h5>
                                     <div class="row row-cards">
                                         <div class="col-6">
@@ -53,21 +54,33 @@
         <div class="col-2 col-rating">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Rating</h5>
-
-                        <h5 class="card-title">Genres</h5>
-
-                        <h5 class="card-title">Platforms</h5>
+                    <h2 class="card-title">Rating {{ game.rating|floatformat:0 }}</h5>
+                        <h5 class="card-title">Genres  </h5>
+                        {% for genres in game.genres %}
+                        <h5 class="card-title">{{ genres }}</h5>
+                        {% endfor %}
+                        <h5 class="card-title">Platforms {{ game.platforms }}</h5>
 
                 </div>
             </div>
         </div>
-        <div class="col-2 col-twitter">
-            <h2 class="card-title">Twitter</h5>
+        <div class="col-4 col-twitter">
+            <div class="card">
+                <h2 class="card-title">{{ game.name }} Twitts</h2>
+                {% for tweet in twitter %}
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">{{tweet.text|ljust:25}}</h13>
+                        <h9 class="card-title">{{tweet.id}}</h9>
+                        <h8 class="card-title">{{tweet.created_at }}</h8>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>   
         </div>
+        {% endfor %}
     </div>
 </div>
-
 <hr class="tg-hr">
 <footer class="tg-footer">
     <a class='tg-link' href='http://timguignard.com' target='_blank'>timguignard.com</a>

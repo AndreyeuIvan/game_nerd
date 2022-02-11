@@ -3,77 +3,88 @@
 {% block content %}
 
 <section class="py-20 bg-light overflow-hidden">
-
     <div class="container">
         <h2 class="mb-16 mb-md-24">Game nerd</h2>
         <div class="d-flex mb-20">
             <div class="flex-shrink-0 w-100">
                 <div class="row">
-                    
-                    <div class="col-12 col-lg-6 mb-20">
+                    <div class="row main-row">
+                        <div class="col-2 col-menu">
+                            <div id="btn-toggle" class="btn btn-primary" onclick="showStuff()">Show / Hide Filters</div>
+                            <div class="menu-wrap" id="my">
+                                <div class="menu">
+                                    <h6 class="filter-title">Filters</h6>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">Filter 1</div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">Filter 2</div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">Filter 3</div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                            </div>
+                                        </div>
+                                        <div class="form-control">(Those filters don't work, it's just a pretext to have
+                                            a credible interface)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% for game in games %}
+                        <div class="col-4 col-games">
+                                <div class="position-relative">
+                                    <a class="position-relative d-block link-dark text-decoration-none" href="#">
+                                        <div class="position-relative" style="height: 384px;">
+                                            <img class="img-fluid w-100 h-100" style="object-fit: cover;"
+                                                src="https://placeimg.com/100/100/any" alt="">
+                                        </div>
+                                        <div class="position-relative mt-1">
+                                            <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-5 text-muted"
+                                                href="#" style="z-index: 1;">love it</a>
+                                            <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-2 text-muted"
+                                                href="#" style="z-index: 1;">Open</a>
+                                            <div class="px-12">
+                                                <h3 class="mb-8">
+                                                    {{ game.name }}
+                                                </h3>
+                                                <span class="h6 text-info text-uppercase">{{game.slug}}</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </a>
+                                    
+                                </div>
+                        </div>
+                        {% endfor %}
                         
-                        <div class="position-relative">
-                            <a class="btn position-absolute top-0 mt-80 end-0 m-5 px-8 py-2 bg-white rounded-2 text-muted"
-                                href="#" style="z-index: 10;">Summer</a>
-                            <a class="position-relative d-block link-dark text-decoration-none" href="#">
-                                <div class="position-relative" style="height: 384px;">
-                                    <img class="img-fluid w-100 h-100" style="object-fit: cover;"
-                                        src="yofte-assets/images/placeholder-surfboard-stands.png" alt="">
-                                </div>
-                                <div class="position-relative mt-12">
-                                    <div class="position-absolute top-0 bg-info ps-1" style="height:176px;"></div>
-                                    <div class="px-12">
-                                        <h3 class="mb-8">After curabitur eu laoreet libero eget en vel odio ultricies!
-                                        </h3>
-                                        <span class="h6 text-info text-uppercase">15 MAY 2021</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 mb-20">
-                        <div class="position-relative">
-                            <a class="btn position-absolute top-0 mt-80 end-0 m-5 px-8 py-2 bg-white rounded-2 text-muted"
-                                href="#" style="z-index: 10;">Summer</a>
-                            <a class="position-relative d-block link-dark text-decoration-none" href="#">
-                                <div class="position-relative" style="height: 384px;">
-                                    <img class="img-fluid w-100 h-100" style="object-fit: cover;"
-                                        src="yofte-assets/images/placeholder-girl.png" alt="">
-                                </div>
-                                <div class="position-relative mt-12">
-                                    <div class="position-absolute top-0 bg-info ps-1" style="height:176px;"></div>
-                                    <div class="px-12">
-                                        <h3 class="mb-8">Next year: one ultricies condimentum phare</h3>
-                                        <span class="h6 text-info text-uppercase">14 MAY 2021</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex align-items-center justify-content-between">
-                        <div class="position-relative me-4 bg-secondary-light col-7 col-md-9" style="height: 4px;">
-                            <div class="position-absolute top-0 bottom-0 start-0 bg-primary col-3"></div>
-                        </div>
-                        <div class="ms-auto col-md-2 d-flex align-items-center justify-content-end">
-                            <a class="me-5 d-flex align-items-center justify-content-center bg-primary rounded-3"
-                                style="width: 48px; height: 48px;" href="#">
-                                <svg width="8" height="12" viewbox="0 0 8 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M3.02344 5.99748L7.14844 10.1225L5.97043 11.3008L0.66742 5.99748L5.97043 0.694179L7.14844 1.87248L3.02344 5.99748Z"
-                                        fill="white"></path>
-                                </svg>
-                            </a>
-                            <a class="d-flex align-items-center justify-content-center bg-info rounded-3"
-                                style="width: 48px; height: 48px;" href="#">
-                                <svg width="8" height="12" viewbox="0 0 8 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4.97656 6.00252L0.851562 1.87752L2.02957 0.699219L7.33258 6.00252L2.02957 11.3058L0.851562 10.1275L4.97656 6.00252Z"
-                                        fill="white"></path>
-                                </svg>
-                            </a>
-                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            </ul>
+                          </nav>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -81,4 +92,15 @@
         <div><a class="btn btn-primary" href="#">Created by Ivan</a></div>
     </div>
 </section>
+
+<script type="text/javascript">
+function showStuff() {
+    let x = document.getElementById('my');
+    if (x.style.display === 'none') {
+        x.style.display ='block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
 {% endblock %}
