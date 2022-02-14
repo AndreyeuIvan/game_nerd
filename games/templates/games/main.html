@@ -50,7 +50,6 @@
                                 </div>
                             </div>
                         </div>
-                        {% csrf_token %}
                         {% for game in games %}
                         <div class="col-4 col-games">
                             <div class="position-relative">
@@ -65,21 +64,20 @@
                                     <span class="h6 text-info text-uppercase">{{game.slug}}</span>
                                 </div>
                                 {% if request.user.is_authenticated %}
-                                {% if like_count >= 0 %}
-                                <div class="position-relative mt-1">
-                                    <a class="likebutton btn btn-primary btn-lg" id="like{{ game.id }}" href="#"
-                                        data-catid="{{ game.id }}">Like</a>
-                                    <p id="message{{game.id}}"></p>
-                                </div>
-                                {% else %}
+                                {% if game.is_liked %}
                                 <div class="position-relative mt-1">
                                     <a class="likebutton btn btn-success btn-lg" id="like{{ game.id }}" href="#"
                                         data-catid="{{ game.id }}">Like</a>
                                     <p id="message{{game.id}}"></p>
                                 </div>
+                                {% else %}
+                                <div class="position-relative mt-1">
+                                    <a class="likebutton btn btn-primary btn-lg" id="like{{ game.id }}" href="#"
+                                        data-catid="{{ game.id }}">Like</a>
+                                    <p id="message{{game.id}}"> </p>
+                                </div>
                                 {% endif %}
                                 {% else %}
-                                
                                 <a href="{% url 'account_login' %}" class="">
                                     Go and register</a>
                                     {% endif %}    
@@ -123,16 +121,23 @@
           type: "GET",
           url: "{% url 'games:like'%}",
           data: {
-            game_id: id
+            game_id: id,
           },
           success: function(data) {
             if (data == 'success') {
-              $('#like' + id).removeClass();
-              $('#like' + id).addClass('btn btn-primary btn-lg');
+                data['is_liked']=true;
+                if ($('#like' + id).hasClass('btn btn-primary btn-lg')) {
+                    $('#like' + id).removeClass();
+                    $('#like' + id).addClass('btn btn-success btn-lg');
+                } else {
+                    $('#like' + id).removeClass();
+                    $('#like' + id).addClass('btn btn-primary btn-lg')
+                }
               console.log(data);
             } else {
+                data['is_liked']=false;
               $('#like' + id).removeClass();
-              $('#like' + id).addClass('btn btn-success btn-lg');
+              $('#like' + id).addClass('btn btn-primary btn-lg');
               console.log(data);
             }
           }

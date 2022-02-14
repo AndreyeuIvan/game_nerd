@@ -1,5 +1,4 @@
 # from django.contrib.auth.models import AbstractBaseUser
-from audioop import maxpp
 from django.db import models
 
 # from django.utils import timezone
@@ -25,16 +24,7 @@ class Game(models.Model):
         settings.AUTH_USER_MODEL, blank=True, related_name="like"
     )
     like_count = models.BigIntegerField(default="0")
+    is_liked = models.BooleanField(verbose_name="liked")
 
     def __str__(self):
         return self.name
-
-
-class Favorite(models.Model):
-    game = models.ForeignKey(Game, models.CASCADE)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, models.CASCADE)
-
-    created = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.game.name

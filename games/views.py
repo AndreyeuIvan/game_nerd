@@ -1,7 +1,7 @@
 from games.service_igdb import IG, tw
 from games.models import Game
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
@@ -19,6 +19,10 @@ def test(request):
     except Game.DoesNotExist:
         return render(request, 'games/404.html')
     """
+    if Game.objects.filter(likes=request.user.id):
+        for e in Game.objects.filter(likes__in=request.user.username):
+            e.is_liked = True
+            e.save()
     context = {"games": Game.objects.all()}
     return render(request, "games/main.html", context)
 
@@ -51,7 +55,7 @@ def favorite(request):
 def like(request):
     if request.method == "GET":
         game_id = request.GET["game_id"]
-        likedgame = Game.objects.get(id=game_id)
+        likedgame = get_object_or_404(Game, id=game_id)
         if likedgame.likes.filter(id=request.user.id).exists():
             likedgame.likes.remove(request.user.id)
             likedgame.like_count -= 1
