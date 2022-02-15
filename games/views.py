@@ -19,10 +19,6 @@ def test(request):
     except Game.DoesNotExist:
         return render(request, 'games/404.html')
     """
-    if Game.objects.filter(likes=request.user.id):
-        for e in Game.objects.filter(likes__in=request.user.username):
-            e.is_liked = True
-            e.save()
     context = {"games": Game.objects.all()}
     return render(request, "games/main.html", context)
 

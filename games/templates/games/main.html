@@ -64,10 +64,11 @@
                                     <span class="h6 text-info text-uppercase">{{game.slug}}</span>
                                 </div>
                                 {% if request.user.is_authenticated %}
-                                {% if game.is_liked %}
+                                {% load custom_filter %}
+                                {% if game.likes|my_filter:request.user.id %}
                                 <div class="position-relative mt-1">
                                     <a class="likebutton btn btn-success btn-lg" id="like{{ game.id }}" href="#"
-                                        data-catid="{{ game.id }}">Like</a>
+                                        data-catid="{{ game.id }}">UnLike</a>
                                     <p id="message{{game.id}}"></p>
                                 </div>
                                 {% else %}
@@ -125,19 +126,20 @@
           },
           success: function(data) {
             if (data == 'success') {
-                data['is_liked']=true;
                 if ($('#like' + id).hasClass('btn btn-primary btn-lg')) {
                     $('#like' + id).removeClass();
                     $('#like' + id).addClass('btn btn-success btn-lg');
+                    $('#like' + id).text('Unlike');
                 } else {
                     $('#like' + id).removeClass();
-                    $('#like' + id).addClass('btn btn-primary btn-lg')
+                    $('#like' + id).addClass('btn btn-primary btn-lg');
+                    $('#like' + id).text('Unlike');
                 }
               console.log(data);
             } else {
-                data['is_liked']=false;
               $('#like' + id).removeClass();
               $('#like' + id).addClass('btn btn-primary btn-lg');
+              $('#like' + id).text('Like');
               console.log(data);
             }
           }
