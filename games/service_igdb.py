@@ -99,7 +99,7 @@ class IGDBWrapper:
         2. Wrape it into variable games.
         3. Trasform into json obj.
         """
-        query = "fields *;"
+        query = "fields name, slug, summary, release_dates, genres, platforms; limit 50;"
         endpoint = "games"
         games = self.api_request(endpoint, query)
         games_json = self.to_json(games)
@@ -130,7 +130,7 @@ class IGDBWrapper:
 
 
 IG = IGDBWrapper(_.client_id_twitch, token_twitch)
-
+print(token_twitch)
 
 # twitter
 URL_TWITTER_AUTH = "https://api.twitter.com/oauth2/token"
@@ -141,7 +141,6 @@ auth_tweet = MyAuth(
     secret=_.API_SECRET_KEY, client_id=_.API_KEY_TWITTER, url=URL_TWITTER_AUTH
 ).get_token_twitter(_.HASH)
 token_twitter = auth_tweet.json()["access_token"]
-print(auth_tweet.status_code)
 
 
 URL_TWITTER_SEARCH = "https://api.twitter.com/2/tweets/search/recent"

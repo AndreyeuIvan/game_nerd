@@ -1,0 +1,544 @@
+[
+    {
+        "id": 33260,
+        "genres": [
+            15,
+            32
+        ],
+        "name": "The Fifth Expedition",
+        "platforms": [
+            3,
+            6
+        ],
+        "release_dates": [
+            77732,
+            77733
+        ],
+        "slug": "the-fifth-expedition",
+        "summary": "Guide your team of explorers into the treacherous depths of an ancient machine. \n \nOn a mission to restore the old mechanisms to life and to save your people on the surface, who rely on the age old construct for food and shelter."
+    },
+    {
+        "id": 40104,
+        "genres": [
+            5
+        ],
+        "name": "Dogou Souken",
+        "platforms": [
+            52
+        ],
+        "release_dates": [
+            91007
+        ],
+        "slug": "dogou-souken",
+        "summary": "An overhead-view shoot'em up game."
+    },
+    {
+        "id": 85031,
+        "genres": [
+            9
+        ],
+        "name": "City Mysteries",
+        "platforms": [
+            37
+        ],
+        "release_dates": [
+            138333
+        ],
+        "slug": "city-mysteries",
+        "summary": "Search buildings, streets, landmarks as you seek and find hidden objects in New York, Paris, Moscow and London!"
+    },
+    {
+        "id": 161757,
+        "name": "Earth Defense Force: World Brothers - Riho Futaba, Merry Santa Costume",
+        "slug": "earth-defense-force-world-brothers-riho-futaba-merry-santa-costume",
+        "summary": "Riho Futaba (voiced by Yuko Goto), a virtual idol who has appeared in numerous video games including the \"Dream Club\" series, is now joining the EDF. And what's more, she's appearing in Santa Costume. She also comes equipped with an exclusive weapon available only with this content."
+    },
+    {
+        "id": 35481,
+        "genres": [
+            31,
+            32
+        ],
+        "name": "Hare In The Hat",
+        "platforms": [
+            6,
+            14
+        ],
+        "release_dates": [
+            81617,
+            81618
+        ],
+        "slug": "hare-in-the-hat",
+        "summary": "Evil magician holds the Hare imprisoned. Your quest is to save him!\nJoin the fabulous adventure in perfect mix of hidden object, puzzle and room escape genres!"
+    },
+    {
+        "id": 139538,
+        "genres": [
+            32
+        ],
+        "name": "sun machine",
+        "platforms": [
+            82
+        ],
+        "release_dates": [
+            213594
+        ],
+        "slug": "sun-machine",
+        "summary": "a story of dark days, chronic fatigue, optimism, and nostalgia"
+    },
+    {
+        "id": 33284,
+        "genres": [
+            32
+        ],
+        "name": "One way to exit",
+        "platforms": [
+            6
+        ],
+        "release_dates": [
+            77755
+        ],
+        "slug": "one-way-to-exit",
+        "summary": "Move forward or backward in search of an exit, but remember, if you started moving you can not stop, and in any case, do not touch the walls, otherwise you have to start all over again."
+    },
+    {
+        "id": 89616,
+        "genres": [
+            9,
+            33
+        ],
+        "name": "Bubble Whirl Shooter",
+        "slug": "bubble-whirl-shooter",
+        "summary": "Shoot bubbles and match colors to pop your way up to victory in this bubble shooting adventure, win magic keys to unlock more secret colorful bubble world, it\u2019s time to enjoy the endless bubble shooting fun!"
+    },
+    {
+        "id": 104748,
+        "name": "Space station - build your own ISS",
+        "slug": "space-station-build-your-own-iss"
+    },
+    {
+        "id": 146815,
+        "genres": [
+            9
+        ],
+        "name": "Parking Lot Maze",
+        "platforms": [
+            6
+        ],
+        "release_dates": [
+            242971
+        ],
+        "slug": "parking-lot-maze",
+        "summary": "Parking Lot Maze is a puzzle game where as a parking lot manager, you need to free cars from gridlock before the stress level hits the roof."
+    },
+    {
+        "id": 85450,
+        "name": "Transformers Prime: The Game",
+        "slug": "transformers-prime-the-game"
+    },
+    {
+        "id": 135938,
+        "genres": [
+            13,
+            32
+        ],
+        "name": "a sunny day in lockdown",
+        "platforms": [
+            82
+        ],
+        "release_dates": [
+            204829
+        ],
+        "slug": "a-sunny-day-in-lockdown",
+        "summary": "a sketch of a spring day in self-isolation"
+    },
+    {
+        "id": 91579,
+        "name": "Racing Live",
+        "slug": "racing-live"
+    },
+    {
+        "id": 126622,
+        "genres": [
+            31,
+            32
+        ],
+        "name": "Long Count",
+        "slug": "long-count",
+        "summary": "Sierra-style Point & Click Adventure"
+    },
+    {
+        "id": 58674,
+        "genres": [
+            14,
+            33
+        ],
+        "name": "PKTBALL",
+        "platforms": [
+            34,
+            39
+        ],
+        "release_dates": [
+            178827,
+            178828
+        ],
+        "slug": "pktball",
+        "summary": "A hyper-charged arcade smash sport designed to test your skills and reflexes to the max. Fight your way through the leaderboard and become a PKTBALL master!"
+    },
+    {
+        "id": 155915,
+        "genres": [
+            31,
+            32
+        ],
+        "name": "Freus",
+        "slug": "freus",
+        "summary": "Freus is a 2D platform adventure game. You will complete your revenge with the abilities given by THE devil in impressive pieces adventures."
+    },
+    {
+        "id": 174288,
+        "name": "Apollo LM",
+        "platforms": [
+            39
+        ],
+        "release_dates": [
+            316013
+        ],
+        "slug": "apollo-lm",
+        "summary": "3D fly and land the Apollo Lunar Module on the moon! Easy and precise control with one finger. Real moon topology mapping. Rewrite humanity's greatest achievement and... Land the 1st woman on the moon! Place your country's flag on the moon! Apollo mission dialogue voices transcription. Be Miss or Mr Armstrong. Evolve your Astronaut level. Evolve the Lunar Module. Challenge your astronaut friends through the Game Center."
+    },
+    {
+        "id": 174291,
+        "name": "Minar",
+        "platforms": [
+            39
+        ],
+        "release_dates": [
+            316017
+        ],
+        "slug": "minar",
+        "summary": "Take mine-sweeping to the next dimension with Minar. Challenge your brain with 4 game modes, including a classic 2d board just like you remember it! Battle for the highest ranks in the Global Leaderboards! Be the quickest (or smartest) in the world and make your mark! Earn over 40 unique Achievements as you play. Minar is a relaxing 3d puzzle game on the style of 'minesweeper'. The 3rd dimension adds an additional degree of challenge which makes Minar truly unique. The game comes packed with game modes and difficulties, and supports multiple customizations (including themes and skins). Once yours, the game is completely unlocked for you to enjoy to its fullest!"
+    },
+    {
+        "id": 78193,
+        "genres": [
+            10
+        ],
+        "name": "Test Drive",
+        "platforms": [
+            6,
+            8,
+            11
+        ],
+        "release_dates": [
+            176466,
+            176467,
+            176468
+        ],
+        "slug": "test-drive--1",
+        "summary": "Test Drive is a racing game developed by Pitbull Syndicate. In Test Drive, you play as Dennis Black, a street racer who is contacted by a wheelchair-bound man and hired to race in his place in a series of underground street races known as \"test drives\". \n \nThis edition of Test Drive has some improvements over it's predecessor, Test Drive 6. This time around there is a story driven mode, called \"The Underground.\" You take the role of Dennis Black, an independent street racer who improves his standing in the underground street racing world with the help of a mysterious benefactor."
+    },
+    {
+        "id": 48468,
+        "genres": [
+            14
+        ],
+        "name": "Home Run Nighter '90: The Pennant League",
+        "platforms": [
+            99
+        ],
+        "release_dates": [
+            315673
+        ],
+        "slug": "home-run-nighter-90-the-pennant-league",
+        "summary": "Home Run Night '90: The Pennant League is a Sports game, developed and published by Data East, which was released in Japan in 1990."
+    },
+    {
+        "id": 138142,
+        "name": "Lime Ergot",
+        "platforms": [
+            3,
+            6,
+            14,
+            82
+        ],
+        "release_dates": [
+            208843,
+            208844,
+            208845,
+            208846
+        ],
+        "slug": "lime-ergot",
+        "summary": "The last two officers of a tropical colonial outpost wait for evacuation."
+    },
+    {
+        "id": 71300,
+        "name": "PixelShips",
+        "slug": "pixelships",
+        "summary": "PixelShips is a side-scrolling 2D shooter consisting of randomly generated levels and missions."
+    },
+    {
+        "id": 74270,
+        "name": "Q",
+        "slug": "q",
+        "summary": "Kinect-only puzzle game for Xbox One"
+    },
+    {
+        "id": 130740,
+        "name": "Deathmatch Club",
+        "slug": "deathmatch-club"
+    },
+    {
+        "id": 100789,
+        "genres": [
+            14,
+            33
+        ],
+        "name": "Flying Arrow!.",
+        "slug": "flying-arrow--1",
+        "summary": "Flying Arrow is a game control throw your arrow reach the remote target most."
+    },
+    {
+        "id": 154564,
+        "genres": [
+            31,
+            32
+        ],
+        "name": "Cascadia Quest",
+        "slug": "cascadia-quest",
+        "summary": "Relive 1980s nostalgia in this classic adventure game. Cascadia Quest sends the player on an epic adventure though forests, mountains and mysterious lairs, on a mission of escape and retribution!"
+    },
+    {
+        "id": 124961,
+        "name": "Railroad Tycoon 2: Platinum Edition",
+        "slug": "railroad-tycoon-2-platinum-edition"
+    },
+    {
+        "id": 85137,
+        "name": "Family Trainer: Extreme Challenge",
+        "platforms": [
+            5
+        ],
+        "release_dates": [
+            139330
+        ],
+        "slug": "family-trainer-extreme-challenge",
+        "summary": "Family Trainer: Extreme Challenge is the follow up to the successful Family Trainer game/mat bundle."
+    },
+    {
+        "id": 176209,
+        "genres": [
+            10
+        ],
+        "name": "YogKart",
+        "slug": "yogkart",
+        "summary": "Yogkart is a racing fangame set in the Yogscast universe. The game has N64 style graphics, local multiplayer support and a variety of characters and items to use. YogKart was submitted to the 2019 Jingle Jam Game Jam."
+    },
+    {
+        "id": 109342,
+        "name": "Christmas Mahjong 2",
+        "slug": "christmas-mahjong-2",
+        "summary": "A Christmas atmosphere on every level! Are you ready to dive into a winter fairytale? Complete 120 unique levels of Mahjong!"
+    },
+    {
+        "id": 107721,
+        "genres": [
+            31,
+            32
+        ],
+        "name": "The Vrennman Case",
+        "slug": "the-vrennman-case",
+        "summary": "The Vrennman Case is an adventure game in which you uncover the secrets of a demonic cult, solving puzzles that have you cross the line between the world of the living and the spirit world."
+    },
+    {
+        "id": 182726,
+        "genres": [
+            31
+        ],
+        "name": "Maze: The Ritual",
+        "slug": "maze-the-ritual",
+        "summary": "A horror-themed first-person dungeon crawler."
+    },
+    {
+        "id": 130742,
+        "name": "Flashy Maze",
+        "slug": "flashy-maze"
+    },
+    {
+        "id": 181285,
+        "genres": [
+            9
+        ],
+        "name": "Pico Room4Joy",
+        "slug": "pico-room4joy",
+        "summary": "Provide the service of decorating and cleaning spaces so they spark joy!"
+    },
+    {
+        "id": 141337,
+        "genres": [
+            5,
+            12,
+            15,
+            31,
+            32
+        ],
+        "name": "Diary of Lucie",
+        "slug": "diary-of-lucie",
+        "summary": "Diary of Lucie is action-roguelite game made with RPG Maker. In addition to simply avoiding the enemy's barrage, strategically use the enemy's bullet to make the battle situation advantageous!"
+    },
+    {
+        "id": 57729,
+        "genres": [
+            9
+        ],
+        "name": "Laserbreak: Esacpe",
+        "slug": "laserbreak-esacpe",
+        "summary": "A puzzle game from errorsevendev."
+    },
+    {
+        "id": 183323,
+        "genres": [
+            8
+        ],
+        "name": "Double Time Dash",
+        "slug": "double-time-dash",
+        "summary": "Horses"
+    },
+    {
+        "id": 94975,
+        "name": "Wubble Bubbles",
+        "slug": "wubble-bubbles"
+    },
+    {
+        "id": 86080,
+        "genres": [
+            7
+        ],
+        "name": "SingStar: Frozen",
+        "platforms": [
+            9,
+            48
+        ],
+        "release_dates": [
+            181718,
+            181719
+        ],
+        "slug": "singstar-frozen",
+        "summary": "SingStar: Frozen is a karaoke game based on the animated movie Frozen. Except for the song Let It Go from Demi Lovato, which is the available in all language version, the other nine songs are translated and taken directly from the movie (including dialogue). There are no changes to the gameplay formula: player(s) sing into a microphone and the game gives points based on the performance. It is only rated if the correct not is hit at the correct time; the sung words or octave does not play into the result."
+    },
+    {
+        "id": 1977,
+        "genres": [
+            12,
+            25
+        ],
+        "name": "Scarlet Blade",
+        "platforms": [
+            6
+        ],
+        "release_dates": [
+            8646
+        ],
+        "slug": "scarlet-blade",
+        "summary": "Free-to-play MMORPG developed by LivePlex and published by Aeria Games. It is somewhat infamous for its cast of heavily-sexualized female characters."
+    },
+    {
+        "id": 125970,
+        "name": "Tie Break Tennis",
+        "slug": "tie-break-tennis"
+    },
+    {
+        "id": 6515,
+        "genres": [
+            10,
+            14
+        ],
+        "name": "Moto Racer Advance",
+        "platforms": [
+            24
+        ],
+        "release_dates": [
+            15738
+        ],
+        "slug": "moto-racer-advance",
+        "summary": "The player controls a motorcyclist and must try to win races on various terrain and settings. Each motorcycle in the game handles differently with some performing better on paved roads and others working better on rougher terrain.[1]\n\nThere are a number of different modes: Grand Prix (GP), Motocross, and Traffic. GP takes place at a number of different locations across the world on paved tracks in places such as San Francisco and Russia. The paved tracks require the player to learn how to effectively use their brakes around corners. The GP courses contain small differences between them, giving more variety to the courses in the game. Motocross requires the player to drive on off-road terrain and to master the act of \"powersliding\" on corners. The courses found in Motocross races are less hospitable and often take place in arid and unkept locales and with obstacles. Traffic mixes both GP and Motocross, having mixed pavement courses and traffic on roads that serve as obstacles."
+    },
+    {
+        "id": 13724,
+        "name": "The Hacker",
+        "platforms": [
+            69
+        ],
+        "release_dates": [
+            39299
+        ],
+        "slug": "the-hacker"
+    },
+    {
+        "id": 60970,
+        "genres": [
+            31
+        ],
+        "name": "Dark Hunter: Shita Youma no Mori",
+        "platforms": [
+            32
+        ],
+        "release_dates": [
+            121097
+        ],
+        "slug": "dark-hunter-shita-youma-no-mori",
+        "summary": "The second part of the Dark Hunter English teaching tool."
+    },
+    {
+        "id": 101840,
+        "name": "Aisleen",
+        "slug": "aisleen"
+    },
+    {
+        "id": 127416,
+        "name": "Long loot the King",
+        "slug": "long-loot-the-king",
+        "summary": "Pac-Man inspired retro action horror game about a king, who has to face his own made horrors in the dungeons. All because of his greed and selfishness."
+    },
+    {
+        "id": 137233,
+        "name": "Pocket Color Mahjong",
+        "slug": "pocket-color-mahjong"
+    },
+    {
+        "id": 126451,
+        "name": "File",
+        "platforms": [
+            3,
+            6,
+            14
+        ],
+        "release_dates": [
+            180689,
+            180690,
+            180691
+        ],
+        "slug": "file",
+        "summary": "Raven is just a regular, young woman. She goes to work, she goes to sleep, she checks her e-mails\u2026 In fact, there's nothing special about her. She's just ordinary. \n \nIf she's so uninteresting then why was she targeted by an entity calling itself 'File'? \n \nPart desktop simulator, part platformer, this is a game designed in 2.5 months for #PixelHorrorJam by myself & James_T_Ripper \n \nInspired by the popular titles Welcome To The Game & Pony Island, File requires the mouse to be controlled in order to maneuver Raven's computer in search of a set of programs, each more horrifying as you progress. \n \nControls: \n-Once a program is executed, the D/Right-Arrow Keys can be used to move the player right \n-Alternatively, the A/Left-Arrow Keys can be used to move the player left \nLike most platformers, the Spacebar is used for jumping in levels which require it"
+    },
+    {
+        "id": 6499,
+        "genres": [
+            13
+        ],
+        "name": "Lego Creator: Knights' Kingdom",
+        "platforms": [
+            6
+        ],
+        "release_dates": [
+            15714
+        ],
+        "slug": "lego-creator-knights-kingdom",
+        "summary": "Lego Creator: Knights' Kingdom is a construction simulation video game for Microsoft Windows; it uses virtual Lego pieces to build a medieval kingdom and then use the kingdom in a battle against the character Cedric the Bull."
+    },
+    {
+        "id": 95081,
+        "name": "Soccer Rally Arena",
+        "slug": "soccer-rally-arena"
+    }
+]

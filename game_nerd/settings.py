@@ -1,6 +1,10 @@
-from calendar import TUESDAY
+import django_heroku
 from pathlib import Path
 import environ
+import os
+
+
+django_heroku.settings(locals())
 
 
 env = environ.Env()
@@ -130,6 +134,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

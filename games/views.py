@@ -26,8 +26,12 @@ def test(request):
 def detail(request, id):
     """
     Добавить айди для переменной
+    """
+    """
     try:
-        game = Game.objects.get(pk=game_id)
+        game = Game.objects.get(pk=id)
+        #import pdb;pdb.set_trace()
+        context = {'games': game}
     except Game.DoesNotExist:
         return render(request, 'games/404.html')
     """
@@ -54,12 +58,10 @@ def like(request):
         likedgame = get_object_or_404(Game, id=game_id)
         if likedgame.likes.filter(id=request.user.id).exists():
             likedgame.likes.remove(request.user.id)
-            likedgame.like_count -= 1
             likedgame.save()
             return HttpResponse("remove")
         else:
             likedgame.likes.add(request.user.id)
-            likedgame.like_count += 1
             likedgame.save()
         return HttpResponse("success")
     else:

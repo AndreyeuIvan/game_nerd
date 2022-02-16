@@ -58,9 +58,11 @@
                                         src="https://placeimg.com/100/100/any" alt="">
                                 </div>
                                 <div class="px-12">
-                                    <h3 class="mb-8">
-                                        {{ game.name }}
-                                    </h3>
+                                    <a href="{% url 'games:detail' game.id %}">
+                                        <h3 class="mb-8">
+                                            {{ game.name }}
+                                        </h3>
+                                    </a>
                                     <span class="h6 text-info text-uppercase">{{game.slug}}</span>
                                 </div>
                                 {% if request.user.is_authenticated %}
@@ -98,10 +100,6 @@
             </div>
         </div>
     </div>
-    </div>
-    <div><a class="btn btn-primary" href="#">Created by Ivan</a></div>
-    <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-2 text-muted" href="#"
-        style="z-index: 1;">Open</a>
     </div>
 </section>
 
