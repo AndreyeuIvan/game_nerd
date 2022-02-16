@@ -37,14 +37,12 @@ class Game(models.Model):
     summary = models.CharField(max_length=250, blank=True)
     release_dates = models.DateField(null=True, blank=True)
     rating = models.BigIntegerField(blank=True)
-    genres = models.ForeignKey("Genres", on_delete=models.CASCADE, null=True)
-    platforms = models.ForeignKey("Platforms", on_delete=models.CASCADE, null=True)
-    tweets = models.ForeignKey("Twitter", on_delete=models.CASCADE, null=True)
+    #genres = models.ForeignKey("Genres", on_delete=models.CASCADE, null=True)
+    #platforms = models.ForeignKey("Platforms", on_delete=models.CASCADE, null=True)
+    #tweets = models.ForeignKey("Twitter", on_delete=models.CASCADE, null=True)
     likes = models.ManyToManyField(
         settings.AUTH_USER_MODEL, blank=True, related_name="like"
     )
-    like_count = models.BigIntegerField(default="0")
-    is_liked = models.BooleanField(verbose_name="liked")
 
     def __str__(self):
         return self.name
