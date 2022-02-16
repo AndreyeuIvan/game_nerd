@@ -2,7 +2,7 @@ import django_heroku
 from pathlib import Path
 import environ
 import os
-
+import dj_database_url
 
 django_heroku.settings(locals())
 
@@ -21,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     "allauth.account",
     "rest_framework",
     "django_extensions",
+    'whitenoise.runserver_nostatic',
+    
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -95,6 +99,8 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -133,6 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Default primary key field type
