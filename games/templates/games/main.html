@@ -52,55 +52,99 @@
                         </div>
                         {% for game in games %}
                         <div class="col-4 col-games">
-                                <div class="position-relative">
-                                    <a class="position-relative d-block link-dark text-decoration-none" href="#">
-                                        <div class="position-relative" style="height: 384px;">
-                                            <img class="img-fluid w-100 h-100" style="object-fit: cover;"
-                                                src="https://placeimg.com/100/100/any" alt="">
-                                        </div>
-                                        <div class="position-relative mt-1">
-                                            <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-5 text-muted"
-                                                href="#" style="z-index: 1;">love it</a>
-                                            <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-2 text-muted"
-                                                href="#" style="z-index: 1;">Open</a>
-                                            <div class="px-12">
-                                                <h3 class="mb-8">
-                                                    {{ game.name }}
-                                                </h3>
-                                                <span class="h6 text-info text-uppercase">{{game.slug}}</span>
-                                            </div>
-                                        </div>
-                                        
-                                    </a>
-                                    
+                            <div class="position-relative">
+                                <div class="position-relative" style="height: 384px;">
+                                    <img class="img-fluid w-100 h-100" style="object-fit: cover;"
+                                        src="https://placeimg.com/100/100/any" alt="">
                                 </div>
+                                <div class="px-12">
+                                    <h3 class="mb-8">
+                                        {{ game.name }}
+                                    </h3>
+                                    <span class="h6 text-info text-uppercase">{{game.slug}}</span>
+                                </div>
+                                {% if request.user.is_authenticated %}
+                                {% load custom_filter %}
+                                {% if game.likes|my_filter:request.user.id %}
+                                <div class="position-relative mt-1">
+                                    <a class="likebutton btn btn-success btn-lg" id="like{{ game.id }}" href="#"
+                                        data-catid="{{ game.id }}">UnLike</a>
+                                    <p id="message{{game.id}}"></p>
+                                </div>
+                                {% else %}
+                                <div class="position-relative mt-1">
+                                    <a class="likebutton btn btn-primary btn-lg" id="like{{ game.id }}" href="#"
+                                        data-catid="{{ game.id }}">Like</a>
+                                    <p id="message{{game.id}}"> </p>
+                                </div>
+                                {% endif %}
+                                {% else %}
+                                <a href="{% url 'account_login' %}" class="">
+                                    Go and register</a>
+                                    {% endif %}    
+                            </div>
                         </div>
                         {% endfor %}
-                        
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-end">
-                              <li class="page-item"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            </ul>
-                          </nav>
-                        </nav>
                     </div>
                 </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+                </nav>
             </div>
         </div>
-        <div><a class="btn btn-primary" href="#">Created by Ivan</a></div>
+    </div>
+    </div>
+    <div><a class="btn btn-primary" href="#">Created by Ivan</a></div>
+    <a class="btn position-relative top-1 mt-2 end-1 m-9 px-1 py-2 bg-white rounded-2 text-muted" href="#"
+        style="z-index: 1;">Open</a>
     </div>
 </section>
 
 <script type="text/javascript">
-function showStuff() {
-    let x = document.getElementById('my');
-    if (x.style.display === 'none') {
-        x.style.display ='block';
-    } else {
-        x.style.display = 'none';
+    function showStuff() {
+        let x = document.getElementById('my');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
     }
-}
+
+    $('.likebutton').click(function() {
+      var id;
+      id = $(this).attr("data-catid");
+      $.ajax({
+          type: "GET",
+          url: "{% url 'games:like'%}",
+          data: {
+            game_id: id,
+          },
+          success: function(data) {
+            if (data == 'success') {
+                if ($('#like' + id).hasClass('btn btn-primary btn-lg')) {
+                    $('#like' + id).removeClass();
+                    $('#like' + id).addClass('btn btn-success btn-lg');
+                    $('#like' + id).text('Unlike');
+                } else {
+                    $('#like' + id).removeClass();
+                    $('#like' + id).addClass('btn btn-primary btn-lg');
+                    $('#like' + id).text('Unlike');
+                }
+              console.log(data);
+            } else {
+              $('#like' + id).removeClass();
+              $('#like' + id).addClass('btn btn-primary btn-lg');
+              $('#like' + id).text('Like');
+              console.log(data);
+            }
+          }
+        },
+      )
+    });
 </script>
 {% endblock %}

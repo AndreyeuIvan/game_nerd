@@ -34,10 +34,12 @@ INSTALLED_APPS = [
     # internal
     "games",
     "accounts",
-    #external
-    'crispy_forms',
-    'allauth',
-    'allauth.account',
+    # external
+    "crispy_forms",
+    "allauth",
+    "allauth.account",
+    "rest_framework",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -51,8 +53,8 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 ROOT_URLCONF = "game_nerd.urls"
@@ -80,14 +82,12 @@ WSGI_APPLICATION = "game_nerd.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DATABASE_NAME"),
-        'USER': 'noname',
-        'HOST': env("DATABASE_HOST"),
-        'PORT': '5432',
-
-
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": env("DATABASE_NAME"),
+        "USER": "noname",
+        "HOST": env("DATABASE_HOST"),
+        "PORT": "5432",
     }
 }
 
@@ -135,19 +135,19 @@ STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/"
 
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
-EMAIL_HOST ='smtp.gmail.com'
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignUpForm'
+ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.SignUpForm"
 
 # Service
 API_KEY_TWITTER = env("API_KEY_TWITTER")
