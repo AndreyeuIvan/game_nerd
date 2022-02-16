@@ -1,1 +1,1 @@
-web: gunicorn game_nerd.wsgi --log-file -
+web: gunicorn game_nerd.wsgi
