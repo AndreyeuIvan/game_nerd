@@ -1,9 +1,8 @@
-# mport django_heroku
+import django_heroku
 from pathlib import Path
 import environ
 import os
 
-# django_heroku.settings(locals())
 
 
 env = environ.Env()
@@ -23,7 +22,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "*",
+    "*", 'http://127.0.0.1:8000/',
 ]
 
 
@@ -142,13 +141,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = "/static/"
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'    
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
+'''
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.SignUpForm"
@@ -172,3 +178,4 @@ BEARER_TOKEN = env("BEARER_TOKEN")
 client_secret_twitch = env("client_secret_twitch")
 client_id_twitch = env("client_id_twitch")
 twitch_required = {"grant_type": "client_credentials"}
+'''
