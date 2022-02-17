@@ -156,7 +156,7 @@ django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-'''
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.SignUpForm"
@@ -180,4 +180,3 @@ BEARER_TOKEN = env("BEARER_TOKEN")
 client_secret_twitch = env("client_secret_twitch")
 client_id_twitch = env("client_id_twitch")
 twitch_required = {"grant_type": "client_credentials"}
-'''
