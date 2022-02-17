@@ -37,7 +37,7 @@ class Platform(models.Model):
 
 
 class Twitter(models.Model):
-    text = models.CharField(max_length=250)
+    text = models.CharField(max_length=500)
     _id = models.CharField(max_length=250)  # models.BigIntegerField(blank=True)
     created_at = models.CharField(
         max_length=250
