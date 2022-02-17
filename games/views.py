@@ -1,4 +1,3 @@
-from games.service_igdb import IG, tw
 from games.models import Game
 
 from django.shortcuts import render, get_object_or_404
@@ -7,37 +6,22 @@ from django.http import HttpResponse
 
 
 def main(request):
-    context = {"games": IG.get_games_list()}
-    return render(request, "games/main.html", context)
-
-
-def test(request):
     """
-    Добавить айди для переменной
-    try:
-        game = Game.objects.get(pk=game_id)
-    except Game.DoesNotExist:
-        return render(request, 'games/404.html')
+    Отображаем все имеющееся игры в базе
     """
+    # context = {"games": IG.get_games_list()}
     context = {"games": Game.objects.all()}
     return render(request, "games/main.html", context)
 
 
 def detail(request, id):
     """
-    Добавить айди для переменной
-    """
+    Предоставляем детали игры
     """
     try:
-        game = Game.objects.get(pk=id)
-        #import pdb;pdb.set_trace()
-        context = {'games': game}
+        context = {"game": Game.objects.get(pk=id)}
     except Game.DoesNotExist:
-        return render(request, 'games/404.html')
-    """
-    context = {"games": IG.get_game_by_id(id)}
-    twitter = {"twitter": tw.get_tweets(context["games"][0]["name"])}
-    context |= twitter
+        return render(request, "games/404.html")
     return render(request, "games/detail.html", context)
 
 
@@ -53,6 +37,9 @@ def favorite(request):
 
 @login_required
 def like(request):
+    """
+    Создаем лайки
+    """
     if request.method == "GET":
         game_id = request.GET["game_id"]
         likedgame = get_object_or_404(Game, id=game_id)

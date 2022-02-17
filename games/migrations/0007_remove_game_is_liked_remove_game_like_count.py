@@ -6,16 +6,16 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('games', '0006_genres_platforms_twitter_game_rating_and_more'),
+        ("games", "0006_genres_platforms_twitter_game_rating_and_more"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='game',
-            name='is_liked',
+            model_name="game",
+            name="is_liked",
         ),
         migrations.RemoveField(
-            model_name='game',
-            name='like_count',
+            model_name="game",
+            name="like_count",
         ),
     ]

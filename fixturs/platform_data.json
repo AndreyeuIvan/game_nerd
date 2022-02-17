@@ -1,0 +1,1276 @@
+[
+    {
+        "model": "games.platform",
+        "pk": 158,
+        "fields": {
+            "name": "Commodore CDTV"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 339,
+        "fields": {
+            "name": "Sega Pico"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 8,
+        "fields": {
+            "name": "PlayStation 2"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 39,
+        "fields": {
+            "name": "iOS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 94,
+        "fields": {
+            "name": "Commodore Plus/4"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 144,
+        "fields": {
+            "name": "AY-3-8710"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 88,
+        "fields": {
+            "name": "Odyssey"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 90,
+        "fields": {
+            "name": "Commodore PET"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 237,
+        "fields": {
+            "name": "Sol-20"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 6,
+        "fields": {
+            "name": "PC (Microsoft Windows)"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 378,
+        "fields": {
+            "name": "Gamate"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 44,
+        "fields": {
+            "name": "Tapwave Zodiac"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 68,
+        "fields": {
+            "name": "ColecoVision"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 129,
+        "fields": {
+            "name": "Texas Instruments TI-99"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 133,
+        "fields": {
+            "name": "Philips Videopac G7000"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 134,
+        "fields": {
+            "name": "Acorn Electron"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 135,
+        "fields": {
+            "name": "Hyper Neo Geo 64"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 156,
+        "fields": {
+            "name": "Thomson MO5"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 165,
+        "fields": {
+            "name": "PlayStation VR"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 163,
+        "fields": {
+            "name": "SteamVR"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 142,
+        "fields": {
+            "name": "PC-50X Family"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 148,
+        "fields": {
+            "name": "AY-3-8607"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 146,
+        "fields": {
+            "name": "AY-3-8605"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 147,
+        "fields": {
+            "name": "AY-3-8606"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 149,
+        "fields": {
+            "name": "PC-98"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 25,
+        "fields": {
+            "name": "Amstrad CPC"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 381,
+        "fields": {
+            "name": "Playdate"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 51,
+        "fields": {
+            "name": "Family Computer Disk System"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 123,
+        "fields": {
+            "name": "WonderSwan Color"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 136,
+        "fields": {
+            "name": "Neo Geo CD"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 35,
+        "fields": {
+            "name": "Sega Game Gear"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 62,
+        "fields": {
+            "name": "Atari Jaguar"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 50,
+        "fields": {
+            "name": "3DO Interactive Multiplayer"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 89,
+        "fields": {
+            "name": "Microvision"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 13,
+        "fields": {
+            "name": "PC DOS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 128,
+        "fields": {
+            "name": "PC Engine SuperGrafx"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 150,
+        "fields": {
+            "name": "Turbografx-16/PC Engine CD"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 23,
+        "fields": {
+            "name": "Dreamcast"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 65,
+        "fields": {
+            "name": "Atari 8-bit"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 70,
+        "fields": {
+            "name": "Vectrex"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 85,
+        "fields": {
+            "name": "Donner Model 30"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 97,
+        "fields": {
+            "name": "PDP-8"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 98,
+        "fields": {
+            "name": "DEC GT40"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 112,
+        "fields": {
+            "name": "Microcomputer"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 101,
+        "fields": {
+            "name": "Ferranti Nimrod Computer"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 115,
+        "fields": {
+            "name": "Apple IIGS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 124,
+        "fields": {
+            "name": "SwanCrystal"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 127,
+        "fields": {
+            "name": "Fairchild Channel F"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 125,
+        "fields": {
+            "name": "PC-8801"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 87,
+        "fields": {
+            "name": "Virtual Boy"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 126,
+        "fields": {
+            "name": "TRS-80"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 130,
+        "fields": {
+            "name": "Nintendo Switch"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 132,
+        "fields": {
+            "name": "Amazon Fire TV"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 138,
+        "fields": {
+            "name": "VC 4000"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 139,
+        "fields": {
+            "name": "1292 Advanced Programmable Video System"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 155,
+        "fields": {
+            "name": "Tatung Einstein"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 159,
+        "fields": {
+            "name": "Nintendo DSi"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 119,
+        "fields": {
+            "name": "Neo Geo Pocket"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 153,
+        "fields": {
+            "name": "Dragon 32/64"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 154,
+        "fields": {
+            "name": "Amstrad PCW"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 11,
+        "fields": {
+            "name": "Xbox"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 108,
+        "fields": {
+            "name": "PDP-11"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 47,
+        "fields": {
+            "name": "Virtual Console (Nintendo)"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 53,
+        "fields": {
+            "name": "MSX2"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 60,
+        "fields": {
+            "name": "Atari 7800"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 78,
+        "fields": {
+            "name": "Sega CD"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 24,
+        "fields": {
+            "name": "Game Boy Advance"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 30,
+        "fields": {
+            "name": "Sega 32X"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 140,
+        "fields": {
+            "name": "AY-3-8500"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 143,
+        "fields": {
+            "name": "AY-3-8760"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 145,
+        "fields": {
+            "name": "AY-3-8603"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 4,
+        "fields": {
+            "name": "Nintendo 64"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 18,
+        "fields": {
+            "name": "Nintendo Entertainment System (NES)"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 16,
+        "fields": {
+            "name": "Amiga"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 120,
+        "fields": {
+            "name": "Neo Geo Pocket Color"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 41,
+        "fields": {
+            "name": "Wii U"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 77,
+        "fields": {
+            "name": "Sharp X1"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 82,
+        "fields": {
+            "name": "Web browser"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 109,
+        "fields": {
+            "name": "CDC Cyber 70"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 113,
+        "fields": {
+            "name": "OnLive Game System"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 116,
+        "fields": {
+            "name": "Acorn Archimedes"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 114,
+        "fields": {
+            "name": "Amiga CD32"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 117,
+        "fields": {
+            "name": "Philips CD-i"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 121,
+        "fields": {
+            "name": "Sharp X68000"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 122,
+        "fields": {
+            "name": "Nuon"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 141,
+        "fields": {
+            "name": "AY-3-8610"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 37,
+        "fields": {
+            "name": "Nintendo 3DS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 29,
+        "fields": {
+            "name": "Sega Mega Drive/Genesis"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 64,
+        "fields": {
+            "name": "Sega Master System"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 22,
+        "fields": {
+            "name": "Game Boy Color"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 38,
+        "fields": {
+            "name": "PlayStation Portable"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 86,
+        "fields": {
+            "name": "TurboGrafx-16/PC Engine"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 19,
+        "fields": {
+            "name": "Super Nintendo Entertainment System (SNES)"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 162,
+        "fields": {
+            "name": "Oculus VR"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 308,
+        "fields": {
+            "name": "Playdia"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 9,
+        "fields": {
+            "name": "PlayStation 3"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 14,
+        "fields": {
+            "name": "Mac"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 306,
+        "fields": {
+            "name": "Satellaview"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 32,
+        "fields": {
+            "name": "Sega Saturn"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 34,
+        "fields": {
+            "name": "Android"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 42,
+        "fields": {
+            "name": "N-Gage"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 66,
+        "fields": {
+            "name": "Atari 5200"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 67,
+        "fields": {
+            "name": "Intellivision"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 73,
+        "fields": {
+            "name": "BlackBerry OS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 307,
+        "fields": {
+            "name": "Game & Watch"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 111,
+        "fields": {
+            "name": "Imlac PDS-1"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 118,
+        "fields": {
+            "name": "FM Towns"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 131,
+        "fields": {
+            "name": "Nintendo PlayStation"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 157,
+        "fields": {
+            "name": "NEC PC-6000 Series"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 15,
+        "fields": {
+            "name": "Commodore C64/128"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 152,
+        "fields": {
+            "name": "FM-7"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 20,
+        "fields": {
+            "name": "Nintendo DS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 63,
+        "fields": {
+            "name": "Atari ST/STE"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 46,
+        "fields": {
+            "name": "PlayStation Vita"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 48,
+        "fields": {
+            "name": "PlayStation 4"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 61,
+        "fields": {
+            "name": "Atari Lynx"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 93,
+        "fields": {
+            "name": "Commodore 16"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 21,
+        "fields": {
+            "name": "Nintendo GameCube"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 374,
+        "fields": {
+            "name": "Sharp MZ-2200"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 58,
+        "fields": {
+            "name": "Super Famicom"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 375,
+        "fields": {
+            "name": "Epoch Cassette Vision"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 388,
+        "fields": {
+            "name": "Gear VR"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 96,
+        "fields": {
+            "name": "PDP-10"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 52,
+        "fields": {
+            "name": "Arcade"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 137,
+        "fields": {
+            "name": "New Nintendo 3DS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 377,
+        "fields": {
+            "name": "Plug & Play"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 386,
+        "fields": {
+            "name": "Oculus Quest 2"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 55,
+        "fields": {
+            "name": "Legacy Cellphone"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 57,
+        "fields": {
+            "name": "WonderSwan"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 71,
+        "fields": {
+            "name": "Commodore VIC-20"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 75,
+        "fields": {
+            "name": "Apple II"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 74,
+        "fields": {
+            "name": "Windows Phone"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 80,
+        "fields": {
+            "name": "Neo Geo AES"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 84,
+        "fields": {
+            "name": "SG-1000"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 161,
+        "fields": {
+            "name": "Windows Mixed Reality"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 79,
+        "fields": {
+            "name": "Neo Geo MVS"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 33,
+        "fields": {
+            "name": "Game Boy"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 376,
+        "fields": {
+            "name": "Epoch Super Cassette Vision"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 5,
+        "fields": {
+            "name": "Wii"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 379,
+        "fields": {
+            "name": "Game.com"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 382,
+        "fields": {
+            "name": "Intellivision Amico"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 170,
+        "fields": {
+            "name": "Google Stadia"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 167,
+        "fields": {
+            "name": "PlayStation 5"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 387,
+        "fields": {
+            "name": "Oculus Go"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 385,
+        "fields": {
+            "name": "Oculus Rift"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 91,
+        "fields": {
+            "name": "Bally Astrocade"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 384,
+        "fields": {
+            "name": "Oculus Quest"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 69,
+        "fields": {
+            "name": "BBC Microcomputer System"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 3,
+        "fields": {
+            "name": "Linux"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 72,
+        "fields": {
+            "name": "Ouya"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 95,
+        "fields": {
+            "name": "PDP-1"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 151,
+        "fields": {
+            "name": "TRS-80 Color Computer"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 100,
+        "fields": {
+            "name": "Analogue electronics"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 166,
+        "fields": {
+            "name": "Pok\u00e9mon mini"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 102,
+        "fields": {
+            "name": "EDSAC"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 104,
+        "fields": {
+            "name": "HP 2100"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 236,
+        "fields": {
+            "name": "Exidy Sorcerer"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 103,
+        "fields": {
+            "name": "PDP-7"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 238,
+        "fields": {
+            "name": "DVD Player"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 105,
+        "fields": {
+            "name": "HP 3000"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 106,
+        "fields": {
+            "name": "SDS Sigma 7"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 164,
+        "fields": {
+            "name": "Daydream"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 107,
+        "fields": {
+            "name": "Call-A-Computer time-shared mainframe computer system"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 240,
+        "fields": {
+            "name": "Zeebo"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 110,
+        "fields": {
+            "name": "PLATO"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 239,
+        "fields": {
+            "name": "Blu-ray Player"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 26,
+        "fields": {
+            "name": "ZX Spectrum"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 274,
+        "fields": {
+            "name": "PC-FX"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 27,
+        "fields": {
+            "name": "MSX"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 309,
+        "fields": {
+            "name": "Evercade"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 372,
+        "fields": {
+            "name": "OOParts"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 373,
+        "fields": {
+            "name": "Sinclair ZX81"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 203,
+        "fields": {
+            "name": "DUPLICATE Stadia"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 380,
+        "fields": {
+            "name": "Casio Loopy"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 169,
+        "fields": {
+            "name": "Xbox Series X|S"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 59,
+        "fields": {
+            "name": "Atari 2600"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 12,
+        "fields": {
+            "name": "Xbox 360"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 49,
+        "fields": {
+            "name": "Xbox One"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 7,
+        "fields": {
+            "name": "PlayStation"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 99,
+        "fields": {
+            "name": "Family Computer"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 389,
+        "fields": {
+            "name": "AirConsole"
+        }
+    },
+    {
+        "model": "games.platform",
+        "pk": 390,
+        "fields": {
+            "name": "PlayStation VR2"
+        }
+    }
+]

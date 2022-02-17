@@ -17,29 +17,47 @@ class CustomUser(AbstractBaseUser):
 """
 
 
-class Genres(models.Model):
+class Genre(models.Model):
+    created_at = models.CharField(max_length=250)
     name = models.CharField(max_length=250)
+    slug = models.CharField(max_length=250)
+    updated_at = models.CharField(max_length=250)
+    url = models.URLField()
+    checksum = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
-class Platforms(models.Model):
+class Platform(models.Model):
     name = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
 
 
 class Twitter(models.Model):
     text = models.CharField(max_length=250)
-    twitter_id = models.IntegerField(blank=True)
-    created_at = models.DateTimeField(null=True, blank=True)
+    _id = models.CharField(max_length=250)  # models.BigIntegerField(blank=True)
+    created_at = models.CharField(
+        max_length=250
+    )  # models.DateTimeField(null=True, blank=True)
 
+    def __str__(self):
+        return self.text
+        
 
 class Game(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(unique=True, blank=True)
-    summary = models.CharField(max_length=250, blank=True)
-    release_dates = models.DateField(null=True, blank=True)
-    rating = models.BigIntegerField(blank=True)
-    #genres = models.ForeignKey("Genres", on_delete=models.CASCADE, null=True)
-    #platforms = models.ForeignKey("Platforms", on_delete=models.CASCADE, null=True)
-    #tweets = models.ForeignKey("Twitter", on_delete=models.CASCADE, null=True)
+    summary = models.CharField(max_length=250, blank=True, null=True)
+    release_dates = models.CharField(
+        max_length=250, blank=True, null=True
+    )  # models.DateField(null=True, blank=True)
+    rating = models.BigIntegerField(blank=True, null=True)
+    genres = models.ManyToManyField("Genre", related_name="genres")
+    platforms = models.ManyToManyField("Platform", related_name="platforms" )
+    tweets = models.ManyToManyField("Twitter", related_name="tweets")
     likes = models.ManyToManyField(
         settings.AUTH_USER_MODEL, blank=True, related_name="like"
     )

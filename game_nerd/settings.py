@@ -1,10 +1,9 @@
-#mport django_heroku
+# mport django_heroku
 from pathlib import Path
 import environ
 import os
-import dj_database_url
 
-#django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 
 env = environ.Env()
@@ -21,9 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = [
+    "*",
+]
 
 
 # Application definition
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     "allauth.account",
     "rest_framework",
     "django_extensions",
-    
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -86,7 +85,7 @@ WSGI_APPLICATION = "game_nerd.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-'''
+"""
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
@@ -96,16 +95,16 @@ DATABASES = {
         "PORT": "5432",
     }
 }
-'''
+"""
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
-#db_from_env = dj_database_url.config(conn_max_age=600)
-#DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -144,16 +143,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.SignUpForm"
 LOGIN_REDIRECT_URL = "/"
-
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
@@ -164,13 +163,12 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.SignUpForm"
 
 # Service
 API_KEY_TWITTER = env("API_KEY_TWITTER")
 API_SECRET_KEY = env("API_SECRET_KEY")
 BEARER_TOKEN = env("BEARER_TOKEN")
-HASH = env("HASH")
+
 client_secret_twitch = env("client_secret_twitch")
 client_id_twitch = env("client_id_twitch")
 twitch_required = {"grant_type": "client_credentials"}
