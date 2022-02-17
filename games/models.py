@@ -50,7 +50,7 @@ class Twitter(models.Model):
 class Game(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(unique=True, blank=True)
-    summary = models.CharField(max_length=500, blank=True, null=True)
+    summary = models.CharField(max_length=1500, blank=True, null=True)
     release_dates = models.CharField(
         max_length=250, blank=True, null=True
     )  # models.DateField(null=True, blank=True)
