@@ -18,10 +18,7 @@ def detail(request, id):
     """
     Предоставляем детали игры
     """
-    try:
-        context = {"game": Game.objects.get(pk=id)}
-    except Game.DoesNotExist:
-        return render(request, "games/404.html")
+    context = {"game": get_object_or_404(Game, pk=id)}
     return render(request, "games/detail.html", context)
 
 

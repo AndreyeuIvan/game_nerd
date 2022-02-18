@@ -29,23 +29,23 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         date = datetime.now().strftime("%Y-%m-%d %H")
         igb_json = IG.get_games_list()
-        my_format = []
-        for i in igb_json:
-            my_format += [
-                {
-                    "model": "games.game",
-                    "pk": i.get("id"),
-                    "fields": {
-                        "name": i.get("name"),
-                        "slug": i.get("slug"),
-                        "summary": i.get("summary"),
-                        "release_dates": i.get("release_dates"),
-                        "rating": i.get("rating"),
-                        "genres": self.get_all_obj(i.get("genres")),
-                        "platforms": self.get_all_obj(i.get("platforms")),
-                        "tweets": self.get_tweet_id(i.get("name")),
-                    },
-                }
-            ]
+        my_format = [
+            {
+                "model": "games.game",
+                "pk": game.get("id"),
+                "fields": {
+                    "name": game.get("name"),
+                    "slug": game.get("slug"),
+                    "summary": game.get("summary"),
+                    "release_dates": game.get("release_dates"),
+                    "rating": game.get("rating"),
+                    "genres": self.get_all_obj(game.get("genres")),
+                    "platforms": self.get_all_obj(game.get("platforms")),
+                    "tweets": self.get_tweet_id(game.get("name")),
+                },
+            }
+            for game in igb_json
+        ]
+
         with open(f"fixture_{date}.json", "w") as file:
             json.dump(my_format, file)
