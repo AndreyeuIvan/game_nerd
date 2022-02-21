@@ -99,7 +99,9 @@ class IGDBWrapper:
         2. Wrape it into variable games.
         3. Trasform into json obj.
         """
-        query = "fields *;"
+        query = (
+            "fields name, slug, summary, release_dates, genres, platforms; limit 50;"
+        )
         endpoint = "games"
         games = self.api_request(endpoint, query)
         games_json = self.to_json(games)
@@ -137,12 +139,12 @@ URL_TWITTER_AUTH = "https://api.twitter.com/oauth2/token"
 
 
 # get tokken for twitter
+"""
 auth_tweet = MyAuth(
     secret=_.API_SECRET_KEY, client_id=_.API_KEY_TWITTER, url=URL_TWITTER_AUTH
 ).get_token_twitter(_.HASH)
 token_twitter = auth_tweet.json()["access_token"]
-print(auth_tweet.status_code)
-
+"""
 
 URL_TWITTER_SEARCH = "https://api.twitter.com/2/tweets/search/recent"
 
@@ -177,9 +179,14 @@ class TwitterWrapper:
         re_game = re.sub("[^a-zA-Z0-9 \n\.]", "", game_name)
         try:
             list_of_tweets = self.api_request(re_game)["data"]
+            for tw in list_of_tweets:
+                k_old = "id"
+                k_new = "_id"
+                tw[k_new] = int(tw.pop(k_old))
+            # import pdb;pdb.set_trace()
         except:
             list_of_tweets = ""
         return list_of_tweets
 
 
-tw = TwitterWrapper(token_twitter)
+tw = TwitterWrapper(_.BEARER_TOKEN)

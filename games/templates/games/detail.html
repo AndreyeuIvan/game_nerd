@@ -4,7 +4,7 @@
 
 <div class="main">
     <div class="row main-row">
-        {% for game in games %}
+        
         <div class="col-6 col-main">
             <div class="row row-cards">
                 <div class="col-18 col-card">
@@ -53,21 +53,25 @@
         </div>
         <div class="col-2 col-rating">
             <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title">Rating {{ game.rating|floatformat:0 }}</h5>
-                        <h5 class="card-title">Genres  </h5>
-                        {% for genres in game.genres %}
-                        <h5 class="card-title">{{ genres }}</h5>
+                <div class="card-header">
+                    <h2 class="card-title">Rating </h5>
+                        <h5 class="list-group-item">{{ game.rating|floatformat:0 }}</h5>
+                        <h4 class="card-title">Genres  </h5>
+                        {% for genre in game.genres.all %}
+                        <h6 class="list-group-item">{{ genre.name }}</h5>
                         {% endfor %}
-                        <h5 class="card-title">Platforms {{ game.platforms }}</h5>
-
+                        <p>{{game.genre}}</p>
+                        <ul class="list-group list-group-flush">Platforms </ul>
+                        {% for plat in game.platforms.all %}
+                        <li class="list-group-item"> {{ plat.name }}</li>
+                        {% endfor %}
                 </div>
             </div>
         </div>
         <div class="col-4 col-twitter">
             <div class="card">
                 <h2 class="card-title">{{ game.name }} Twitts</h2>
-                {% for tweet in twitter %}
+                {% for tweet in game.tweets.all %}
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">{{tweet.text|ljust:25}}</h13>
@@ -78,7 +82,7 @@
                 {% endfor %}
             </div>   
         </div>
-        {% endfor %}
+        
     </div>
 </div>
 <hr class="tg-hr">
