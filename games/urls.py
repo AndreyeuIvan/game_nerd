@@ -4,6 +4,7 @@ from rest_framework import routers
 
 from games.views import main, detail, favorite, like, GameViewSet
 
+
 app_name = "games"
 
 router = routers.DefaultRouter()
