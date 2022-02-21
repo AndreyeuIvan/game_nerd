@@ -1,9 +1,12 @@
 from games.models import Game
+from games.serializers import GameSerializer
 
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
+from rest_framework.response import Response
+from rest_framework import mixins, viewsets
 
 def main(request):
     """
@@ -50,3 +53,11 @@ def like(request):
         return HttpResponse("success")
     else:
         return HttpResponse("unsuccesful")
+
+
+class GameViewSet(viewsets.ModelViewSet):
+    """
+    Created api with 2 methods: get by id and list
+    """
+    serializer_class = GameSerializer
+    queryset = Game.objects.all()
