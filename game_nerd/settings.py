@@ -91,7 +91,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": env("DATABASE_NAME"),
         "USER": "noname",
-        "HOST": env("DATABASE_HOST"),
+        "HOST": env("SQL_HOST"),
         "PORT": "5432",
     }
 }
