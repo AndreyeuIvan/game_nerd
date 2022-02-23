@@ -1,9 +1,8 @@
-# mport django_heroku
+import django_heroku
 from pathlib import Path
 import environ
 import os
 
-# django_heroku.settings(locals())
 
 
 env = environ.Env()
@@ -23,7 +22,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "*",
+    "*", 'http://127.0.0.1:8000/',
 ]
 
 
@@ -45,10 +44,12 @@ INSTALLED_APPS = [
     "allauth.account",
     "rest_framework",
     "django_extensions",
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -149,8 +150,16 @@ REST_FRAMEWORK = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = "/static/"
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'    
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
+
 
 # PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Default primary key field type
@@ -158,19 +167,18 @@ STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Login 
 ACCOUNT_SIGNUP_FORM_CLASS = "accounts.forms.SignUpForm"
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
-# Email configs
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 # Service
 API_KEY_TWITTER = env("API_KEY_TWITTER")

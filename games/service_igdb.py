@@ -132,7 +132,7 @@ class IGDBWrapper:
 
 
 IG = IGDBWrapper(_.client_id_twitch, token_twitch)
-
+print(token_twitch)
 
 # twitter
 URL_TWITTER_AUTH = "https://api.twitter.com/oauth2/token"

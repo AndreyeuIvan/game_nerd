@@ -1,6 +1,5 @@
 # from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
-from django.forms import CharField, DateTimeField
 
 # from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
@@ -37,26 +36,26 @@ class Platform(models.Model):
 
 
 class Twitter(models.Model):
-    text = models.CharField(max_length=250)
-    _id = models.CharField(max_length=250)  # models.BigIntegerField(blank=True)
+    text = models.CharField(max_length=500)
+    _id = models.CharField(max_length=300)  # models.BigIntegerField(blank=True)
     created_at = models.CharField(
-        max_length=250
+        max_length=300
     )  # models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.text
-
+        
 
 class Game(models.Model):
-    name = models.CharField(max_length=120)
-    slug = models.SlugField(unique=True, blank=True)
-    summary = models.CharField(max_length=250, blank=True, null=True)
+    name = models.CharField(max_length=500)
+    slug = models.SlugField(unique=True, blank=True, max_length=500)
+    summary = models.CharField(max_length=1500, blank=True, null=True)
     release_dates = models.CharField(
         max_length=250, blank=True, null=True
     )  # models.DateField(null=True, blank=True)
     rating = models.BigIntegerField(blank=True, null=True)
     genres = models.ManyToManyField("Genre", related_name="genres")
-    platforms = models.ManyToManyField("Platform", related_name="platforms")
+    platforms = models.ManyToManyField("Platform", related_name="platforms" )
     tweets = models.ManyToManyField("Twitter", related_name="tweets")
     likes = models.ManyToManyField(
         settings.AUTH_USER_MODEL, blank=True, related_name="like"
