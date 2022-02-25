@@ -11,7 +11,7 @@ services:
       context: .
     command: gunicorn game_nerd.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - ./game_nerd/:/Users/noname/PycharmProjects/django/game_ners
+      - ./game_nerd:/game_nerd
     ports:
       - 8000:8000
     env_file:
