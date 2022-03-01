@@ -37,9 +37,9 @@ class Platform(models.Model):
 
 class Twitter(models.Model):
     text = models.CharField(max_length=500)
-    _id = models.CharField(max_length=250)  # models.BigIntegerField(blank=True)
+    _id = models.CharField(max_length=300)  # models.BigIntegerField(blank=True)
     created_at = models.CharField(
-        max_length=250
+        max_length=300
     )  # models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
