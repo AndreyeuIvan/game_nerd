@@ -6,13 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
+<<<<<<< HEAD
         ("games", "0001_initial"),
+=======
+        ('games', '0001_initial'),
+>>>>>>> e3c9e71feb93abe7823ccc85314b8fcbbf0042f9
     ]
 
     operations = [
         migrations.AlterField(
+<<<<<<< HEAD
             model_name="twitter",
             name="_id",
+=======
+            model_name='twitter',
+            name='_id',
+>>>>>>> e3c9e71feb93abe7823ccc85314b8fcbbf0042f9
             field=models.CharField(max_length=300),
         ),
     ]
