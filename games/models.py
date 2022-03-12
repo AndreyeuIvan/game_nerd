@@ -44,7 +44,7 @@ class Twitter(models.Model):
 
     def __str__(self):
         return self.text
-        
+
 
 class Game(models.Model):
     name = models.CharField(max_length=500)
@@ -55,7 +55,7 @@ class Game(models.Model):
     )  # models.DateField(null=True, blank=True)
     rating = models.BigIntegerField(blank=True, null=True)
     genres = models.ManyToManyField("Genre", related_name="genres")
-    platforms = models.ManyToManyField("Platform", related_name="platforms" )
+    platforms = models.ManyToManyField("Platform", related_name="platforms")
     tweets = models.ManyToManyField("Twitter", related_name="tweets")
     likes = models.ManyToManyField(
         settings.AUTH_USER_MODEL, blank=True, related_name="like"

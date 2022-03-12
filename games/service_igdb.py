@@ -183,7 +183,6 @@ class TwitterWrapper:
                 k_old = "id"
                 k_new = "_id"
                 tw[k_new] = int(tw.pop(k_old))
-            # import pdb;pdb.set_trace()
         except:
             list_of_tweets = ""
         return list_of_tweets

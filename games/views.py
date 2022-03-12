@@ -1,19 +1,24 @@
 from games.models import Game
 from games.serializers import GameSerializer
 
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 
-from rest_framework.response import Response
-from rest_framework import mixins, viewsets
+from rest_framework import viewsets
+
 
 def main(request):
     """
     Отображаем все имеющееся игры в базе
     """
-    # context = {"games": IG.get_games_list()}
-    context = {"games": Game.objects.all()}
+    game = Game.objects.all()
+    paginator = Paginator(game, 15)
+    page_number = request.GET.get('page')
+    games = paginator.get_page(page_number)
+    context = {"games": games}
     return render(request, "games/main.html", context)
 
 
@@ -23,6 +28,16 @@ def detail(request, id):
     """
     context = {"game": get_object_or_404(Game, pk=id)}
     return render(request, "games/detail.html", context)
+
+
+def search(request):
+    """Search query by game name."""
+    query = request.GET.get('q')
+    result = Game.objects.filter(Q(name__icontains=query))
+    try:
+        return detail(request, id=result.values()[0].get('id'))
+    except IndexError:
+        return main(request)
 
 
 def favorite(request):
