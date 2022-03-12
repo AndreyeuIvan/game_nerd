@@ -91,9 +91,17 @@
                 </div>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-end">
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        {% if games.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page=1"> &laquo; 1</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ games.previous_page_number }}"> &laquo; previous</a></li>
+                        {% endif %}
+                        <span class="current">
+                            Page {{ games.number }} of {{ games.paginator.num_pages }}.
+                        </span>
+                        {% if games.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ games.next_page_number }}">next</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ games.paginator.num_pages }}">last &raquo;</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
                 </nav>

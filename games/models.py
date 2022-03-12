@@ -37,14 +37,14 @@ class Platform(models.Model):
 
 class Twitter(models.Model):
     text = models.CharField(max_length=500)
-    _id = models.CharField(max_length=250)  # models.BigIntegerField(blank=True)
+    _id = models.CharField(max_length=300)  # models.BigIntegerField(blank=True)
     created_at = models.CharField(
-        max_length=250
+        max_length=300
     )  # models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.text
-        
+
 
 class Game(models.Model):
     name = models.CharField(max_length=500)
@@ -55,7 +55,7 @@ class Game(models.Model):
     )  # models.DateField(null=True, blank=True)
     rating = models.BigIntegerField(blank=True, null=True)
     genres = models.ManyToManyField("Genre", related_name="genres")
-    platforms = models.ManyToManyField("Platform", related_name="platforms" )
+    platforms = models.ManyToManyField("Platform", related_name="platforms")
     tweets = models.ManyToManyField("Twitter", related_name="tweets")
     likes = models.ManyToManyField(
         settings.AUTH_USER_MODEL, blank=True, related_name="like"
