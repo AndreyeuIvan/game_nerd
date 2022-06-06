@@ -1,5 +1,23 @@
-# game_nerd
+# Overview
 Site for computer game lovers. Using third-party IPs, such as Twitter, Twitch. Used Django + Rest(Drf), some Js+Html, included Docker and runned on Heroku. Mainly on Bootstrap template. 
+
+Using public API addresses, you can find a lot of interesting things on the net. This application is a synergy of several such addresses. Users get access to the world of games, with a detailed description and the latest reviews of the game.
+
+There is a convenient system of registration and user authentication. There is the following filtering system by categories:
+
+* platform (Xbox vs. PlayStation or PC)
+
+* Age restriction
+
+* genre
+
+* the date of release
+
+Each user can log into their personal account. Change the necessary data, such as email and personal data. Separately, there is a page with favorite games for the user, whose changes occur dynamically using Ajax requests. On the main page, the user sees a list of the first 20 games. If the user likes the game, he can press the “like” button. After that, all the games he has chosen are placed on a separate page, where he can view them separately.
+
+The app also has its own public API address with data about games and reviews from Twitter.
+
+The main advantage is the built-in data update capability by the administrator. He can update the game database once a day or once a week. This will keep your games and review data updated in real time.
 
 
 ## Table of Contents
