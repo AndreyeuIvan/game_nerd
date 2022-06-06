@@ -1,5 +1,5 @@
 # game_nerd
-Site for computer game lovers. Using third-party IPs, such as Twitter, Twitch. Used Django + Rest(Drf), some Js+Html. Mainly on Bootstrap template. 
+Site for computer game lovers. Using third-party IPs, such as Twitter, Twitch. Used Django + Rest(Drf), some Js+Html, included Docker and runned on Heroku. Mainly on Bootstrap template. 
 
 
 ## Table of Contents
